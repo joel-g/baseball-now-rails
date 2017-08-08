@@ -6,7 +6,11 @@ class PlayersController < ApplicationController
 
   def new
     @player = Player.new
-    render :new
+    if request.xhr?
+      render :new, layout: false
+    else
+      render :new
+    end
   end
 
   def create
