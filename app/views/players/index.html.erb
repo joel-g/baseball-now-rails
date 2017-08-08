@@ -1,1 +1,14 @@
-<h2>Home</h2>
+  <div class='chart'>
+  <%= scatter_chart Player.pluck(:pitches_faced, :hits),
+    width: "1000px",
+    height: "600px",
+    label: "Hits",
+    xtitle: "Pitches Faced",
+    ytitle: "Hits",
+    library: {
+      tooltip: {
+          pointFormat: '{}'
+        }
+      }
+    %>
+  </div>
