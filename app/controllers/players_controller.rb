@@ -4,4 +4,8 @@ class PlayersController < ApplicationController
     render :index
   end
 
+  def new
+    render :new
+  end
+
 end
