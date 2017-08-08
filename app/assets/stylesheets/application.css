@@ -15,3 +15,7 @@ h1 {
 .form-target {
   float: left;
 }
+
+.errors {
+  color: red;
+}

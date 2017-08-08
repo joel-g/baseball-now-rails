@@ -1,5 +1,13 @@
 <h2>Add Player Data</h2>
 
+<div class='errors'>
+ <% if @player.errors.any? %>
+   <% @player.errors.full_messages.each do |error| %>
+    <div><%= error %></div>
+   <% end %>
+ <% end %>
+</div>
+
 <%= form_for @player do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %><br>
