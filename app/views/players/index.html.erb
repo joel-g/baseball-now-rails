@@ -1,5 +1,5 @@
   <div class='chart'>
-  <%= scatter_chart Player.pluck(:pitches_faced, :hits),
+  <%= scatter_chart Player.pluck(:pitches_faced, :hits, :name),
     width: "1000px",
     height: "600px",
     label: "Hits",
@@ -7,7 +7,7 @@
     ytitle: "Hits",
     library: {
       tooltip: {
-          pointFormat: '{}'
+          pointFormat: "<span style='color:red'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>"
         }
       }
     %>
