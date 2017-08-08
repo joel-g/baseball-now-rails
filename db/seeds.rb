@@ -1,4 +1,4 @@
-20.times do
+30.times do
   Player.create(
     name: Faker::Name.name,
     location: Faker::Pokemon.location,
