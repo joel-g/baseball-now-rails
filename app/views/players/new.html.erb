@@ -1,0 +1,16 @@
+<h2>Add Player Data</h2>
+
+<%= form_for @player do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :location %>
+<%= f.text_field :location %><br>
+<%= f.label :pitches_faced %>
+<%= f.number_field :pitches_faced %><br>
+<%= f.label :hits %>
+<%= f.number_field :hits %><br>
+<%= f.label :innings %>
+<%= f.text_field :innings %><br>
+<%= f.label :date %>
+<%= f.date_field :date %>
+<% end %>

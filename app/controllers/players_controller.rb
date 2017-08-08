@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
   end
 
   def new
+    @player = Player.new
     render :new
   end
 
