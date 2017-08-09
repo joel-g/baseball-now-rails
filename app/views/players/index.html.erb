@@ -1,5 +1,8 @@
   <div class='form-target'>
-
+    <% if @error %>
+      There was a problem with your file upload.<br>Please check format.<br>
+      Numbers can not be negative.<br>Pitches faced must be at least 1.<br>Date must base in YYYY-MM-DD format.
+    <% end %>
   </div>
   <div class='chart'>
   <%= scatter_chart Player.pluck(:pitches_faced, :hits),
