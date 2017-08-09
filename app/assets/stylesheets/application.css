@@ -5,7 +5,7 @@
 
 .chart {
   margin: 0 auto;
-  width: 1000px;
+  width: 800px;
 }
 
 h1 {
@@ -18,4 +18,12 @@ h1 {
 
 .errors {
   color: red;
+}
+
+.form-container {
+  text-align: center;
+}
+
+input {
+  margin: 5px;
 }

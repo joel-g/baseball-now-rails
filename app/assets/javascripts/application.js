@@ -15,8 +15,6 @@ var addPlayerDataListener = function() {
   })
 }
 
-
-
 $(document).ready(function() {
   addPlayerDataListener();
 });

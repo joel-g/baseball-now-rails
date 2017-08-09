@@ -28,15 +28,13 @@ class PlayersController < ApplicationController
       if @player.save
         redirect_to root_path
       else
-        render :new
+        render :index
       end
     end
   end
 
   def player_params
-    if params[:bulk]
-      p 'yes bulk'
-    else
+    if params[:player]
       params.require(:player).permit(:name, :location, :pitches_faced, :hits, :innings, :date)
     end
   end
