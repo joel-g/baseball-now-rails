@@ -10,30 +10,24 @@
 </div>
 
 <%= form_for @player do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br>
-<%= f.label :location %>
-<%= f.text_field :location %><br>
-<%= f.label :pitches_faced %>
-<%= f.number_field :pitches_faced %><br>
-<%= f.label :hits %>
-<%= f.number_field :hits %><br>
-<%= f.label :innings %>
-<%= f.number_field :innings %><br>
-<%= f.label :date %>
-<%= f.date_field :date %>
+<%= f.text_field :name, placeholder: 'Name' %><br>
+<%= f.text_field :location, placeholder: 'Location' %><br>
+<%= f.number_field :pitches_faced, placeholder: 'Pitches Faced' %><br>
+<%= f.number_field :hits, placeholder: 'Hits' %><br>
+<%= f.number_field :innings, placeholder: 'Innings Played' %><br>
+<%= f.date_field :date, placeholder: 'Date' %>
 <%= f.submit 'Submit' %>
 <% end %>
-<div>
-<h3>Upload CSV of Bulk Player Data</h3>
-</div>
+
 <div class='upload'>
+<h3>Upload CSV of Bulk Player Data</h3>
 <%= form_for(@player, as: :bulk) do |f| %>
 <%= f.file_field :file %>
 <%= f.submit 'Upload' %>
 <% end %>
 CSV file must be in following format with no header row:<br>
-<pre>player name, location, pitches faced, hits, innings, date</pre>
+<pre>player name, location, pitches faced,
+hits, innings, date</pre>
 Date format must be YYYY-MM-DD.
 </div>
 </aside>
