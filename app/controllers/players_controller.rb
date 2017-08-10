@@ -2,22 +2,21 @@ require 'json'
 
 class PlayersController < ApplicationController
 
-  def index
-    if request.xhr?
-      response = []
-      Player.all.each do |player|
-        response << {
-          name: player.name,
-          color: 'rgba(119, 152, 191, .5)',
-          data: [{ x: player.pitches_faced, y: player.hits }],
-          url: "/players/#{player.id}"
-        }
-      end
-      p response
-      response.to_json
-    else
-      render :index
+  def player_data
+    response = []
+    Player.all.each do |player|
+      response << {
+        name: player.name,
+        color: 'rgba(119, 152, 191, .5)',
+        data: [{ x: player.pitches_faced, y: player.hits }],
+        url: "/players/#{player.id}"
+      }
     end
+    render :json => response
+  end
+
+  def index
+    render :index
   end
 
   def new

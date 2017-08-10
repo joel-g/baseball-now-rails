@@ -3,6 +3,8 @@
 //= require Chart.bundle
 //= require chartkick
 
+let chartData = gatherDotsData();
+
 function addPlayerDataListener() {
   $('.add-player-data').on('click', function(e) {
     e.preventDefault();
@@ -18,20 +20,20 @@ function addPlayerDataListener() {
 function gatherDotsData() {
   $.ajax({
     method: 'GET',
-    url: '/',
+    url: '/player_data',
   }).done(function(response){
-    console.log(response)
+    return response;
   })
 }
 
 $(document).ready(function() {
   addPlayerDataListener();
   gatherDotsData();
-  makeAChart();
+  makeAChart(gatherDotsData);
 });
 
 
-function makeAChart(){
+function makeAChart(chartData){
   Highcharts.chart('high-chart', {
       chart: {
           type: 'scatter',
@@ -78,23 +80,6 @@ function makeAChart(){
               }
           }
       },
-      series: [{
-          name: 'Female',
-          color: 'rgba(223, 83, 83, .5)',
-          data: []
-
-      }, {
-          name: 'Baseball Player Guy',
-          color: 'rgba(119, 152, 191, .5)',
-          data: [{x:174.0, y:65.6}],
-          url: 'google.com',
-          point: {
-            events: {
-              click: function() {
-                window.open('/players/1')
-              }
-            }
-          }
-      }]
+      series: gatherDotsData()
   });
 }
