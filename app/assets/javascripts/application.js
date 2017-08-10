@@ -11,7 +11,6 @@ var addPlayerDataListener = function() {
       url: 'players/new'
     }).done(function(response){
       $('.form-target').html(response)
-      $('.chart').css('width', '600px')
     })
   })
 }

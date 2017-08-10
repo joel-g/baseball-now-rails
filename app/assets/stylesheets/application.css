@@ -9,7 +9,9 @@ body {
 nav {
   font-size: 1.2em;
   display: inline-block;
-  float: left;
+  position: absolute;
+  left: 20px;
+  top: 18px;
 }
 
 header {
@@ -23,8 +25,6 @@ header {
 
 h1 {
   margin: 0 auto;
-  text-align: center;
-  display: inline-block;
 }
 
 a {
@@ -37,8 +37,11 @@ a:hover {
 }
 
 .chart {
+  background-color: #E8E9EB;
   margin: 0 auto;
   width: 800px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 
@@ -54,11 +57,11 @@ a:hover {
 .form-container {
   text-align: center;
   width: 190px;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .upload {
-  margin-top: 100px;
+  margin-top: `10`0px;
 }
 
 input {
