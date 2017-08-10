@@ -2,18 +2,48 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: sans-serif;
+}
+
+nav {
+  font-size: 1.2em;
+  display: inline-block;
+  float: left;
+}
+
+header {
+  background-color: #FF0044;
+  color: white;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+}
+
+a:hover {
+  color: silver;
+}
 
 .chart {
   margin: 0 auto;
   width: 800px;
 }
 
-h1 {
-  margin: 0;
-  text-align: center;
-}
 
 .form-target {
+  color: #494A4C;
   float: left;
 }
 
@@ -23,9 +53,8 @@ h1 {
 
 .form-container {
   text-align: center;
-  width: 40%;
+  width: 190px;
   margin-left: 20px;
-  background-color: pink;
 }
 
 .upload {
