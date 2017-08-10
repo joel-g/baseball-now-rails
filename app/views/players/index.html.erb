@@ -15,15 +15,15 @@
     </div>
   </div>
   <div class='chart'>
-  <%= scatter_chart Player.pluck(:pitches_faced, :hits),
+  <%= scatter_chart Player.pluck(:pitches_faced, :hits, :name),
     width: "800px",
     height: "600px",
-    label: "Hits",
+    label: 'Hits Scored',
     xtitle: "Pitches Faced",
     ytitle: "Hits",
     library: {
       tooltip: {
-          pointFormat: "<span style='color:red'>\u25CF</span> {series.name}: <b>{point.y}</b><br/>"
+          pointFormat: "test"
         }
       }
     %>

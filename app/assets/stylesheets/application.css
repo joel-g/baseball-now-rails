@@ -52,6 +52,7 @@ a:hover {
 
 .errors {
   color: red;
+  float: left;
 }
 
 .form-container {
