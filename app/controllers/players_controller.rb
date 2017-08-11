@@ -43,6 +43,11 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update_attributes(comments_params)
+    if request.xhr?
+      render :json => { comments: @player.comments }
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy

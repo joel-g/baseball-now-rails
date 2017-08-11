@@ -6,7 +6,7 @@ Pitches Faced: <b><%= @player.pitches_faced %></b><br>
 Hits: <b><%= @player.hits %></b><br>
 Innings Played: <b><%= @player.innings %></b><br>
 Date Scouted: <%= @player.date.strftime('%-m/%-d/%Y') %><br>
-Comments: <%= @player.comments %>
+Comments: <span class='comments'><%= @player.comments %></span>
 <div class='small'>
 <%= link_to "Delete Player Data", @player, method: :DELETE, class: 'small' %>
 </div>

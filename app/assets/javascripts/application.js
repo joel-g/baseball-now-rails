@@ -20,6 +20,9 @@ function addPlayerCommentListener() {
       method: 'POST',
       url: $('.edit_player').attr('action'),
       data: $('.edit_player').serialize()
+    }).done(function(response){
+      $('.comments').html(response.comments)
+      $('.edit_player').hide();
     })
   })
 }
