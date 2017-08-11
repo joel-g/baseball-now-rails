@@ -43,12 +43,20 @@ nav a:hover {
   color: silver;
 }
 
+a {
+  color: red;
+}
+
+a:hover {
+  color: #494A4C;
+}
+
 #high-chart {
   background-color: #E8E9EB;
   margin: 0 auto;
   min-width: 310px;
   height: 500px;
-  max-width: 900px;
+  max-width: 50%;
   padding: 5px;
   border-radius: 5px;
 }
@@ -83,9 +91,14 @@ input {
   padding: 15px 5px;
   background-color: #E8E9EB;
   border-radius: 5px;
+  font-size: 0.9em;
 }
 
 .small {
   padding-top: 20px;
   font-size: 0.9em;
+}
+
+.comments {
+  font-style: italic;
 }
