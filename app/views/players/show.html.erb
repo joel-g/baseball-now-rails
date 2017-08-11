@@ -9,5 +9,6 @@ Comments: <%= @player.comments %>
 </div>
 <%= form_for @player, method: :PUT do |f| %>
 <%= f.text_field :comments, placeholder: "comments" %>
-<%= f.submit 'Update' %>
+<%= f.submit 'Update' %><br>
+<%= link_to "Delete", @player, method: :DELETE %>
 <% end %>

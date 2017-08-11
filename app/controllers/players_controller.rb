@@ -2,8 +2,6 @@ require 'json'
 
 class PlayersController < ApplicationController
 
-
-
   def index
     render :index
   end
@@ -44,6 +42,12 @@ class PlayersController < ApplicationController
 
   def update
     @player = Player.find(params[:id])
+    @player.update_attributes(comments_params)
+  end
+
+  def destroy
+    @player = Player.find(params[:id])
+    @player.destroy
   end
 
   def player_data
@@ -60,6 +64,10 @@ class PlayersController < ApplicationController
   end
 
   private
+
+  def comments_params
+    params.require(:player).permit(:comments)
+  end
 
   def player_params
     if params[:player]
