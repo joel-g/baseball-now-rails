@@ -6,3 +6,6 @@ Hits: <%= @player.hits %><br>
 Innings Played: <%= @player.innings %><br>
 Date Scouted: <%= @player.date.strftime('%-m/%-d/%Y') %>
 </div>
+<%= form_for @player %>
+<%= text_field :comments, placeholder: "comments" %>
+<% end %>
