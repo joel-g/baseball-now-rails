@@ -14,18 +14,11 @@
     <% end %>
     </div>
   </div>
-  <div class='chart'>
-  <%= scatter_chart Player.pluck(:pitches_faced, :hits, :name),
-    title: 'Batters by Hits and Pitches Faced',
-    width: "800px",
-    height: "600px",
-    label: 'Hits Scored',
-    xtitle: "Pitches Faced",
-    ytitle: "Hits",
-    # library: {
-      tooltip: {
-          pointFormat:'Awesome values: <b>{point.y}</b>'
-        }
-      # }
-    %>
+
+  <div>
+    <div id="high-chart">
+    </div>
+    <div class='center'>
+      Click on a point to see details of the player. Click on a player name to hide them from the graph.
+    </div>
   </div>

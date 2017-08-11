@@ -2,19 +2,19 @@
 <html>
   <head>
     <title>BaseballNow</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
-    </script>
-    <%= csrf_meta_tags %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
     <header>
     <nav>
-      <%= link_to 'Home', root_path %>
       <%= link_to 'Add Player Data', new_player_path, class: 'add-player-data' %>
     </nav>
-      <h1>BaseballNow</h1>
+      <h1 class='center'>BaseballNow</h1>
     </header>
     <%= yield %>
   </body>
