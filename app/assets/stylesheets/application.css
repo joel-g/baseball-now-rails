@@ -73,3 +73,8 @@ a:hover {
 input {
   margin: 3px;
 }
+
+.player {
+  margin-bottom: 20px;
+  background-color: #494A4C;
+}

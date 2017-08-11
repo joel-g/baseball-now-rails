@@ -42,6 +42,10 @@ class PlayersController < ApplicationController
     end
   end
 
+  def update
+    @player = Player.find(params[:id])
+  end
+
   def player_data
     response = []
     Player.all.each do |player|

@@ -4,9 +4,10 @@ Location Scouted: <%= @player.location %><br>
 Pitches Faced: <%= @player.pitches_faced %><br>
 Hits: <%= @player.hits %><br>
 Innings Played: <%= @player.innings %><br>
-Date Scouted: <%= @player.date.strftime('%-m/%-d/%Y') %>
+Date Scouted: <%= @player.date.strftime('%-m/%-d/%Y') %><br>
+Comments: <%= @player.comments %>
 </div>
-<%= form_for @player do |f| %>
+<%= form_for @player, method: :PUT do |f| %>
 <%= f.text_field :comments, placeholder: "comments" %>
 <%= f.submit 'Update' %>
 <% end %>
