@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
   def new
     @player = Player.new
     if request.xhr?
-      render :new, layout: false
+      render :_new, layout: false
     else
       render :new
     end
@@ -36,7 +36,7 @@ class PlayersController < ApplicationController
       if @player.save
         redirect_to root_path
       else
-        render :index
+        render :index, locals: { form_show: true }
       end
     end
   end

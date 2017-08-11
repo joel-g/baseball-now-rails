@@ -1,18 +1,21 @@
 <div class='errors'>
-    <% if @player %>
+  <% if @error %>
+    There was a problem with your file upload.<br>Please check format.<br>
+    Numbers can not be negative.<br>Pitches faced must be at least 1.<br>Date must base in YYYY-MM-DD format.
+  <% end %>
+    <!-- <% if @player %>
      <% if @player.errors.any? %>
        <% @player.errors.full_messages.each do |error| %>
         <div><%= error %></div>
       <% end %>
     <% end %>
-  <% end %>
-</div>
+  <% end %> -->
+  </div>
   <div class='form-target'>
-    <% if @error %>
-      There was a problem with your file upload.<br>Please check format.<br>
-      Numbers can not be negative.<br>Pitches faced must be at least 1.<br>Date must base in YYYY-MM-DD format.
+    <% if defined?(form_show) && form_show %>
+      <%= render new_player_path %>
     <% end %>
-    </div>
+  </div>
   </div>
 
   <div>
