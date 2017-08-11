@@ -60,7 +60,11 @@ function makeAChart(data){
             point: {
               events: {
                 click: function(e){
-                  window.open(e.point.series.userOptions.url)
+                  $.get({
+                    url: e.point.series.userOptions.url
+                  }).done(function(response){
+                    $('.form-target').html(response)
+                  })
                 }
               }
             }

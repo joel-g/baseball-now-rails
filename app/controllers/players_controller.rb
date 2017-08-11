@@ -2,21 +2,15 @@ require 'json'
 
 class PlayersController < ApplicationController
 
-  def player_data
-    response = []
-    Player.all.each do |player|
-      response << {
-        name: player.name,
-        color: 'rgba(119, 152, 191, .5)',
-        data: [{ x: player.pitches_faced, y: player.hits }],
-        url: "/players/#{player.id}",
-      }
-    end
-    render :json => response
-  end
+
 
   def index
     render :index
+  end
+
+  def show
+    @player = Player.find(params[:id])
+    render :show, layout: false
   end
 
   def new
@@ -47,6 +41,21 @@ class PlayersController < ApplicationController
       end
     end
   end
+
+  def player_data
+    response = []
+    Player.all.each do |player|
+      response << {
+        name: player.name,
+        color: 'rgba(119, 152, 191, .5)',
+        data: [{ x: player.pitches_faced, y: player.hits }],
+        url: "/players/#{player.id}",
+      }
+    end
+    render :json => response
+  end
+
+  private
 
   def player_params
     if params[:player]

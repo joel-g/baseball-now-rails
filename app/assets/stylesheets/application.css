@@ -36,10 +36,12 @@ a:hover {
   color: silver;
 }
 
-.chart {
+#high-chart {
   background-color: #E8E9EB;
   margin: 0 auto;
-  width: 800px;
+  min-width: 310px;
+  height: 500px;
+  max-width: 900px;
   padding: 5px;
   border-radius: 5px;
 }
