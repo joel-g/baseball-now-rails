@@ -13,6 +13,17 @@ function addPlayerDataListener() {
   })
 }
 
+function addPlayerCommentListener() {
+  $('.form-target').on('submit', '.edit_player', function(e) {
+    e.preventDefault();
+    $.ajax({
+      method: 'POST',
+      url: $('.edit_player').attr('action'),
+      data: $('.edit_player').serialize()
+    })
+  })
+}
+
 function gatherDotsData() {
   var output;
   $.ajax({
@@ -27,6 +38,7 @@ function gatherDotsData() {
 
 $(document).ready(function() {
   addPlayerDataListener();
+  addPlayerCommentListener();
   makeAChart(gatherDotsData());
 });
 
