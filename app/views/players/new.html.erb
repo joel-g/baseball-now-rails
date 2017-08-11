@@ -1,5 +1,5 @@
 <aside class='form-container'>
-<h3>Add Individual Player Data</h3>
+<h4>Add Individual Player Data</h4>
 
 <div class='errors'>
  <% if @player.errors.any? %>
@@ -20,7 +20,7 @@
 <% end %>
 
 <div class='upload'>
-<h3>Upload CSV of Bulk Player Data</h3>
+<h4>Upload CSV of Bulk Player Data</h4>
 <%= form_for(@player, as: :bulk) do |f| %>
 <%= f.file_field :file %>
 <%= f.submit 'Upload' %>

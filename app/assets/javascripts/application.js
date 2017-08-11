@@ -10,6 +10,7 @@ function addPlayerDataListener() {
       url: 'players/new'
     }).done(function(response){
       $('.form-target').html(response)
+      $('.errors').html('');
     })
   })
 }
@@ -63,7 +64,8 @@ function makeAChart(data){
                   $.get({
                     url: e.point.series.userOptions.url
                   }).done(function(response){
-                    $('.form-target').html(response)
+                    $('.form-target').html(response);
+                    $('.errors').html('');
                   })
                 }
               }
@@ -93,6 +95,5 @@ function makeAChart(data){
           }
       },
       series: data,
-
   });
 }

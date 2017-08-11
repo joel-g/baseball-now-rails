@@ -1,8 +1,12 @@
 <div class='player'>
-<h2><%= @player.name %></h2>
+<h3><%= @player.name %></h3>
 Location Scouted: <%= @player.location %><br>
 Pitches Faced: <%= @player.pitches_faced %><br>
 Hits: <%= @player.hits %><br>
 Innings Played: <%= @player.innings %><br>
 Date Scouted: <%= @player.date.strftime('%-m/%-d/%Y') %>
 </div>
+<%= form_for @player do |f| %>
+<%= f.text_field :comments, placeholder: "comments" %>
+<%= f.submit 'Update' %>
+<% end %>
