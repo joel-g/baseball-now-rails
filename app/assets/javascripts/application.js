@@ -56,6 +56,15 @@ function makeAChart(data){
           }
       },
       plotOptions: {
+          series: {
+            point: {
+              events: {
+                click: function(e){
+                  window.open(e.point.series.userOptions.url)
+                }
+              }
+            }
+          },
           scatter: {
               marker: {
                   radius: 5,
@@ -79,6 +88,7 @@ function makeAChart(data){
               }
           }
       },
-      series: data
+      series: data,
+
   });
 }

@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
         name: player.name,
         color: 'rgba(119, 152, 191, .5)',
         data: [{ x: player.pitches_faced, y: player.hits }],
-        url: "/players/#{player.id}"
+        url: "/players/#{player.id}",
       }
     end
     render :json => response
