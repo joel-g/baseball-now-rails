@@ -92,6 +92,7 @@ input {
   background-color: #E8E9EB;
   border-radius: 5px;
   font-size: 0.9em;
+  max-width: 255px;
 }
 
 .small {
