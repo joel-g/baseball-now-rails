@@ -3,13 +3,10 @@
 //= require Chart.bundle
 //= require chartkick
 
-let chartData = gatherDotsData();
-
 function addPlayerDataListener() {
   $('.add-player-data').on('click', function(e) {
     e.preventDefault();
-    $.ajax({
-      method: 'GET',
+    $.get({
       url: 'players/new'
     }).done(function(response){
       $('.form-target').html(response)
@@ -18,22 +15,24 @@ function addPlayerDataListener() {
 }
 
 function gatherDotsData() {
+  var output;
   $.ajax({
     method: 'GET',
     url: '/player_data',
+    async: false
   }).done(function(response){
-    return response;
+    output = response;
   })
+  return output;
 }
 
 $(document).ready(function() {
   addPlayerDataListener();
-  gatherDotsData();
-  makeAChart(gatherDotsData);
+  makeAChart(gatherDotsData());
 });
 
 
-function makeAChart(chartData){
+function makeAChart(data){
   Highcharts.chart('high-chart', {
       chart: {
           type: 'scatter',
@@ -80,6 +79,6 @@ function makeAChart(chartData){
               }
           }
       },
-      series: gatherDotsData()
+      series: data
   });
 }
