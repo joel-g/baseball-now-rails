@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was built to meet the specifications of a coding challenge given to me by a prospective employer. The specs were:
 
-Things you may want to cover:
+Build a web app for a baseball scout to record data about baseball players' performance.
 
-* Ruby version
+Level 1: Form + simple visualization with 10s of players’ data
 
-* System dependencies
+Level 2: (stretch) Handle 100s of data points for players. Allow for bulk input of data.
 
-* Configuration
+Level 3: (stretch) Improve interactivity in the visualization of results
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Level 4: (stretch) Store players’ data in a database
